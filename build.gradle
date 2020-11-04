@@ -25,7 +25,7 @@ task clean(type: Delete) {
 
 ext {
     appCompatVersion = '1.2.0'
-    constraintLayoutVersion = '2.0.2'
+    constraintLayoutVersion = '2.0.4'
     coreTestingVersion = '2.1.0'
     lifecycleVersion = '2.2.0'
     materialVersion = '1.2.1'

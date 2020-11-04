@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Aula 08</string>
+    <string name="hint_pesquisa_endereco">Endereço</string>
+    <string name="autofill_hint_pesquisa_endereco">Endereço</string>
+    <string name="hint_nome_do_evento">Nome</string>
+    <string name="hint_data_evento">Data</string>
+    <string name="descricao_do_evento">Descrição</string>
+    <string name="adicionar_evento">Adicionar Evento</string>
+    <string name="erro_cadastro">Erro ao cadastrar</string>
 </resources>

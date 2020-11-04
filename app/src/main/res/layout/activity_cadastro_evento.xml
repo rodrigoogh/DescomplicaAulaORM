@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".CadastroEventoActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNome"
+        android:hint="@string/hint_nome_do_evento"
+        android:padding="16dp"
+        android:inputType="text"
+        android:autofillHints="@string/hint_nome_do_evento"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etData"
+        android:inputType="date"
+        android:padding="16dp"
+        android:autofillHints="@string/hint_data_evento"
+        android:hint="@string/hint_data_evento"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPesquisaEndereco"
+        android:hint="@string/hint_pesquisa_endereco"
+        android:padding="16dp"
+        android:inputType="text"
+        android:autofillHints="@string/autofill_hint_pesquisa_endereco"/>
+
+    <EditText
+        android:id="@+id/etDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="277dp"
+        android:autofillHints="@string/hint_nome_do_evento"
+        android:hint="@string/descricao_do_evento"
+        android:inputType="textMultiLine"
+        android:padding="16dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/adicionar_evento"
+        android:textColor="@color/colorAccent"
+        android:layout_margin="20dp"
+        android:id="@+id/btnCadastrar" />
+
+</LinearLayout>

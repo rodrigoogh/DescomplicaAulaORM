@@ -5,6 +5,15 @@
     <string name="hint_nome_do_evento">Nome</string>
     <string name="hint_data_evento">Data</string>
     <string name="descricao_do_evento">Descrição</string>
-    <string name="adicionar_evento">Adicionar Evento</string>
-    <string name="erro_cadastro">Erro ao cadastrar</string>
+    <string name="salvar_evento">Salvar Evento</string>
+    <string name="erro_salvar_evento">Erro ao salvar evento</string>
+    <string name="erro_excluir_evento">Erro ao remover evento</string>
+    <string name="sucesso_cadastro">Evento salvo</string>
+    <string name="sucesso_editar_cadastro">Evento alterado</string>
+    <string name="sucesso_excluir_cadastro">Evento removido</string>
+    <string name="excluir_evento">Excluir Evento</string>
+    <string name="titulo_dialog_excluir_evento">Atenção</string>
+    <string name="confirmacao_dialog_excluir_evento">Deseja realmente descartar?</string>
+    <string name="btn_excluir_evento">Excluir</string>
+    <string name="btn_cancelar_excluir_evento">Cancelar</string>
 </resources>

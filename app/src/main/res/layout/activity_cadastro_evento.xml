@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_horizontal"
-    tools:context=".CadastroEventoActivity">
+    tools:context=".FormularioEventoActivity">
 
     <EditText
         android:layout_width="match_parent"
@@ -49,9 +49,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="@string/adicionar_evento"
+        android:text="@string/salvar_evento"
         android:textColor="@color/colorAccent"
         android:layout_margin="20dp"
-        android:id="@+id/btnCadastrar" />
+        android:id="@+id/btnSalvar" />
 
 </LinearLayout>

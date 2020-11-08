@@ -1,5 +1,6 @@
 package descomplica.desenvolvimentomobile.aula08;
 
+import android.content.Intent;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,12 @@ public class EventoListAdapter extends ListAdapter<Evento, EventoViewHolder> {
     public void onBindViewHolder(@NonNull EventoViewHolder holder, int position) {
         Evento evento = getItem(position);
         holder.bind(evento);
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(holder.itemView.getContext(), FormularioEventoActivity.class);
+            intent.putExtra(FormularioEventoActivity.EXTRA_EVENTO, evento);
+
+            ((MainActivity) holder.itemView.getContext()).startActivityForResult(intent, MainActivity.EDITAR_EVENTO_ACTIVITY_REQUEST_CODE);
+        });
     }
 
     public static class EventoDiff extends DiffUtil.ItemCallback<Evento> {
@@ -37,7 +44,9 @@ public class EventoListAdapter extends ListAdapter<Evento, EventoViewHolder> {
         public boolean areContentsTheSame(@NonNull Evento oldItem, @NonNull Evento newItem) {
             return oldItem.getData().equals(newItem.getData())
                     && oldItem.getLatitude() == newItem.getLatitude()
-                    && oldItem.getLongitude() == newItem.getLongitude();
+                    && oldItem.getLongitude() == newItem.getLongitude()
+                    && oldItem.getNome().equals(newItem.getNome())
+                    && oldItem.getDescricao().equals(newItem.getDescricao());
         }
     }
 }

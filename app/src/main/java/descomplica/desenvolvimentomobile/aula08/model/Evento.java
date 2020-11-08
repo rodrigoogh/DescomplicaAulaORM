@@ -1,7 +1,5 @@
 package descomplica.desenvolvimentomobile.aula08.model;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,11 +8,13 @@ import java.io.Serializable;
 @Entity(tableName = "evento")
 public class Evento implements Serializable {
     @PrimaryKey(autoGenerate = true)
-    private long id;
+    private int id;
 
     private String nome;
 
     private String data;
+
+    private String endereco;
 
     private double latitude;
 
@@ -22,29 +22,21 @@ public class Evento implements Serializable {
 
     private String descricao;
 
-
-    public Evento(long id, String nome, String data, double latitude, double longitude, String descricao) {
+    public Evento(int id, String nome, String data, String endereco, double latitude, double longitude, String descricao) {
         this.id = id;
         this.nome = nome;
         this.data = data;
+        this.endereco = endereco;
         this.latitude = latitude;
         this.longitude = longitude;
         this.descricao = descricao;
     }
 
-    public Evento(String nome, String data, double latitude, double longitude, String descricao) {
-        this.nome = nome;
-        this.data = data;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.descricao = descricao;
-    }
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -62,6 +54,14 @@ public class Evento implements Serializable {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public double getLatitude() {

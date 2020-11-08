@@ -1,6 +1,7 @@
 package descomplica.desenvolvimentomobile.aula08.dao;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -11,6 +12,7 @@ import java.util.List;
 
 import descomplica.desenvolvimentomobile.aula08.model.Evento;
 
+@Dao
 public interface EventoDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

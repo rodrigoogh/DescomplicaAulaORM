@@ -1,5 +1,7 @@
 package descomplica.desenvolvimentomobile.aula08;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +14,25 @@ import descomplica.desenvolvimentomobile.aula08.model.Evento;
 
 public class EventoViewHolder extends RecyclerView.ViewHolder {
 
-    private final TextView tvItemLista;
+    private final TextView tvItemNomeEvento;
+    private final TextView tvItemDataEvento;
 
-    public EventoViewHolder(@NonNull View itemView) {
+    public EventoViewHolder(@NonNull View itemView, Context context) {
         super(itemView);
-        tvItemLista = itemView.findViewById(R.id.tvItemLista);
+        tvItemNomeEvento = itemView.findViewById(R.id.tvItemNomeEvento);
+        tvItemDataEvento = itemView.findViewById(R.id.tvItemDataEvento);
     }
 
     public void bind(Evento evento) {
-        tvItemLista.setText(evento.getNome());
+        tvItemNomeEvento.setText(evento.getNome());
+        tvItemDataEvento.setText(evento.getData());
     }
 
     public static EventoViewHolder create(ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext())
+        Context context = parent.getContext();
+        View view = LayoutInflater.from(context)
                 .inflate(R.layout.recyclerview_item_lista, parent, false);
-        return new EventoViewHolder(view);
+        return new EventoViewHolder(view, context);
     }
+
 }

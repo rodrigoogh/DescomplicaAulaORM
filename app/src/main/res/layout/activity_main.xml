@@ -24,7 +24,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
-        android:contentDescription="@string/adicionar_evento"
+        android:contentDescription="@string/salvar_evento"
+        android:background="#000"
         android:src="@drawable/ic_baseline_add_24" />
 
 

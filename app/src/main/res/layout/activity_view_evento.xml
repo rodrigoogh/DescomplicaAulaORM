@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/lbNomeEvento"
+            style="@style/label"
+            android:text="@string/label_nome_do_evento"
+            android:labelFor="@+id/tvNomeEvento"/>
+
+        <TextView
+            android:id="@+id/tvNomeEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lbDataEvento"
+            style="@style/label"
+            android:text="@string/label_data_evento"
+            android:labelFor="@+id/tvDataEvento"/>
+
+        <TextView
+            android:id="@+id/tvDataEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lbDescricaoEvento"
+            style="@style/label"
+            android:text="@string/label_descricao_evento"
+            android:labelFor="@+id/tvDescricaoEvento"/>
+
+        <TextView
+            android:id="@+id/tvDescricaoEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lbEnderecoEvento"
+            style="@style/label"
+            android:text="@string/label_endereco_evento"
+            android:labelFor="@+id/tvEnderecoEvento"/>
+
+        <TextView
+            android:id="@+id/tvEnderecoEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnAbrirMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/abrir_mapa"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+</ScrollView>

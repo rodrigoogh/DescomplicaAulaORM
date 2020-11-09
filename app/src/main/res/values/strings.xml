@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Aula 08</string>
+    <string name="hint_pesquisa_endereco">Endereço</string>
+    <string name="autofill_hint_pesquisa_endereco">Endereço</string>
+    <string name="hint_nome_do_evento">Nome</string>
+    <string name="hint_data_evento">Data</string>
+    <string name="descricao_do_evento">Descrição</string>
+    <string name="salvar_evento">Salvar Evento</string>
+    <string name="erro_salvar_evento">Erro ao salvar evento</string>
+    <string name="erro_excluir_evento">Erro ao remover evento</string>
+    <string name="sucesso_cadastro">Evento salvo</string>
+    <string name="sucesso_editar_cadastro">Evento alterado</string>
+    <string name="sucesso_excluir_cadastro">Evento removido</string>
+    <string name="excluir_evento">Excluir Evento</string>
+    <string name="titulo_dialog_excluir_evento">Atenção</string>
+    <string name="confirmacao_dialog_excluir_evento">Deseja realmente descartar?</string>
+    <string name="btn_excluir_evento">Excluir</string>
+    <string name="btn_cancelar_excluir_evento">Cancelar</string>
+    <string name="editar_evento">Editar Evento</string>
+    <string name="label_nome_do_evento">Nome do Evento:</string>
+    <string name="label_data_evento">Data:</string>
+    <string name="label_endereco_evento">Endereço:</string>
+    <string name="label_descricao_evento">Descrição:</string>
+    <string name="abrir_mapa">Abrir no Mapa</string>
 </resources>

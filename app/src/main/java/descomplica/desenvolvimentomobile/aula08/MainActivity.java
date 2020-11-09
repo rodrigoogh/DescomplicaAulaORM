@@ -18,8 +18,9 @@ import descomplica.desenvolvimentomobile.aula08.viewmodel.EventoViewModel;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NOVO_EVENTO_ACTIVITY_REQUEST_CODE = 1;
-    public static final int EDITAR_EVENTO_ACTIVITY_REQUEST_CODE = 2;
     public static final int EXCLUIR_EVENTO_ACTIVITY_REQUEST_CODE = 3;
+    public static final int VER_EVENTO_ACTIVITY_REQUEST_CODE = 4;
+
     private EventoViewModel eventoViewModel;
     private FloatingActionButton btnCadastro;
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnCadastro = findViewById(R.id.btnCadastro);
         btnCadastro.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, FormularioEventoActivity.class);
+            Intent intent = new Intent(MainActivity.this, FormEventoActivity.class);
             startActivityForResult(intent, NOVO_EVENTO_ACTIVITY_REQUEST_CODE);
         });
     }
@@ -53,33 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == NOVO_EVENTO_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             Evento evento = (Evento) (data != null ?
-                    data.getSerializableExtra(FormularioEventoActivity.EXTRA_EVENTO) : null);
+                    data.getSerializableExtra(FormEventoActivity.EXTRA_EVENTO) : null);
             if (evento != null) {
                 eventoViewModel.cadastrar(evento);
                 Toast.makeText(getApplicationContext(), R.string.sucesso_cadastro, Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getApplicationContext(), R.string.erro_salvar_evento, Toast.LENGTH_LONG).show();
             }
-        } else if (requestCode == EDITAR_EVENTO_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Evento evento = (Evento) (data != null ?
-                    data.getSerializableExtra(FormularioEventoActivity.EXTRA_EVENTO) : null);
-            if (evento != null) {
-                eventoViewModel.alterar(evento);
-                Toast.makeText(getApplicationContext(), R.string.sucesso_editar_cadastro, Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(getApplicationContext(), R.string.erro_salvar_evento, Toast.LENGTH_LONG).show();
-            }
         } else if (resultCode == EXCLUIR_EVENTO_ACTIVITY_REQUEST_CODE) {
             Evento evento = (Evento) (data != null ?
-                    data.getSerializableExtra(FormularioEventoActivity.EXTRA_EVENTO) : null);
+                    data.getSerializableExtra(FormEventoActivity.EXTRA_EVENTO) : null);
             if (evento != null) {
                 eventoViewModel.excluir(evento);
                 Toast.makeText(getApplicationContext(), R.string.sucesso_excluir_cadastro, Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getApplicationContext(), R.string.erro_excluir_evento, Toast.LENGTH_LONG).show();
             }
-        } else {
-            Toast.makeText(getApplicationContext(), R.string.erro_salvar_evento, Toast.LENGTH_LONG).show();
         }
     }
 }

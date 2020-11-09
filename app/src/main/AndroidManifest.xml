@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="true">
-        <activity android:name=".FormularioEventoActivity"
+        <activity android:name=".FormEventoActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ViewEventoActivity"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -26,10 +26,12 @@ public class EventoListAdapter extends ListAdapter<Evento, EventoViewHolder> {
         Evento evento = getItem(position);
         holder.bind(evento);
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(holder.itemView.getContext(), FormularioEventoActivity.class);
-            intent.putExtra(FormularioEventoActivity.EXTRA_EVENTO, evento);
+            Intent intent = new Intent(holder.itemView.getContext(), ViewEventoActivity.class);
+            intent.putExtra(FormEventoActivity.EXTRA_EVENTO, evento);
+            intent.setAction(Intent.ACTION_VIEW);
 
-            ((MainActivity) holder.itemView.getContext()).startActivityForResult(intent, MainActivity.EDITAR_EVENTO_ACTIVITY_REQUEST_CODE);
+            ((MainActivity) holder.itemView.getContext()).startActivityForResult(intent,
+                    MainActivity.VER_EVENTO_ACTIVITY_REQUEST_CODE);
         });
     }
 

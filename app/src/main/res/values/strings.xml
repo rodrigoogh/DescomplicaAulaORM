@@ -16,4 +16,10 @@
     <string name="confirmacao_dialog_excluir_evento">Deseja realmente descartar?</string>
     <string name="btn_excluir_evento">Excluir</string>
     <string name="btn_cancelar_excluir_evento">Cancelar</string>
+    <string name="editar_evento">Editar Evento</string>
+    <string name="label_nome_do_evento">Nome do Evento:</string>
+    <string name="label_data_evento">Data:</string>
+    <string name="label_endereco_evento">Endereço:</string>
+    <string name="label_descricao_evento">Descrição:</string>
+    <string name="abrir_mapa">Abrir no Mapa</string>
 </resources>

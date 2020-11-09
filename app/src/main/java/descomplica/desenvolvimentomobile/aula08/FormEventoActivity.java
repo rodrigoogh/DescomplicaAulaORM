@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,34 +28,17 @@ import java.util.List;
 
 import descomplica.desenvolvimentomobile.aula08.model.Evento;
 
-public class FormularioEventoActivity extends AppCompatActivity {
+public class FormEventoActivity extends AppCompatActivity {
 
-    public static final String EXTRA_EVENTO = "descomplica.desenvolvimentomobile.aula08.FormularioEventoActivity.EVENTO";
+    public static final String EXTRA_EVENTO = "descomplica.desenvolvimentomobile.aula08.FormEventoActivity.EVENTO";
     EditText etNome, etPesquisaEndereco, etData, etDescricao;
     double latitude, longitude = 0;
     Button btnSalvar;
-    AlertDialog.Builder alertDialogBuilder;
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.btnExcluirEvento) {
-            alertDialogBuilder.show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_activity_formulario_evento, menu);
-        return true;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_evento);
+        setContentView(R.layout.activity_form_evento);
 
         Bundle extras = getIntent().getExtras();
         Evento evento = extras != null ? (Evento) extras.getSerializable(EXTRA_EVENTO) : null;
@@ -78,7 +60,7 @@ public class FormularioEventoActivity extends AppCompatActivity {
             List<Place.Field> estabelecimentos = Arrays.asList(Place.Field.NAME,
                     Place.Field.ADDRESS);
             Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY,
-                    estabelecimentos).build(FormularioEventoActivity.this);
+                    estabelecimentos).build(FormEventoActivity.this);
             startActivityForResult(intent, 100);
         });
 
@@ -117,28 +99,6 @@ public class FormularioEventoActivity extends AppCompatActivity {
             finish();
         });
 
-        alertDialogBuilder = new AlertDialog.Builder(FormularioEventoActivity.this);
-        alertDialogBuilder.setTitle(R.string.titulo_dialog_excluir_evento)
-                .setMessage(R.string.confirmacao_dialog_excluir_evento)
-                .setPositiveButton(R.string.btn_excluir_evento, (dialogInterface, i) -> excluirEvento())
-                .setNegativeButton(R.string.btn_cancelar_excluir_evento, ((dialogInterface, i) -> {
-
-                }))
-                .create();
-
-    }
-
-    private void excluirEvento() {
-        Evento evento = (Evento) getIntent().getSerializableExtra(EXTRA_EVENTO);
-        Intent intent = new Intent();
-
-        if (evento == null) {
-            setResult(RESULT_CANCELED, intent);
-        } else {
-            intent.putExtra(EXTRA_EVENTO, evento);
-            setResult(MainActivity.EXCLUIR_EVENTO_ACTIVITY_REQUEST_CODE, intent);
-        }
-        finish();
     }
 
     @Override

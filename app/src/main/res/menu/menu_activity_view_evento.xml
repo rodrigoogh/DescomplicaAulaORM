@@ -2,8 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/btnEditarEvento"
+        android:title="@string/editar_evento"
+        android:icon="@drawable/ic_baseline_edit_24"
+        app:showAsAction="always"
+        android:iconTint="@color/colorAccent"/>
+    <item
         android:id="@+id/btnExcluirEvento"
         android:title="@string/excluir_evento"
         android:icon="@drawable/ic_baseline_delete_forever_24"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"
+        android:iconTint="@color/colorAccent"/>
 </menu>
